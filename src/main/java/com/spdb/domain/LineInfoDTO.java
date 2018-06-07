@@ -9,14 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class ScheduleDTO {
-    Long way;
+public class LineInfoDTO {
     Long order;
-    Double avgDelay;
-    String scheduleDeparture;
-    String avgRealDeparture;
-    String lineName;
-    Long courseId;
-    Long dayType;
-    Long stopId;
+    String stop;
+    Long way;
 }

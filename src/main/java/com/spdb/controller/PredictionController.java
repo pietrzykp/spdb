@@ -20,10 +20,12 @@ public class PredictionController {
         return ResponseEntity.ok("Dupa");
     }
 
-    @GetMapping("/lineName/{lineName}/begin/{beginstop}/end/{endstop}")
-    public ResponseEntity<String> getPredictions(@PathVariable("lineName") String lineName,
-                                                 @PathVariable("beginstop") String beginStop,
-                                                 @PathVariable("endstop") String endStop) {
-        return ResponseEntity.ok(predictionService.getPrediction());
+    @GetMapping("/line/{line}/way/{way}/begin/{begin}/end/{end}/starttime/{starttime}")
+    public ResponseEntity<String> getPredictions(@PathVariable("line") String lineName,
+                                                 @PathVariable("way") Long way,
+                                                 @PathVariable("begin") Long beginStop,
+                                                 @PathVariable("end") Long endStop,
+                                                 @PathVariable("starttime") String startTime) {
+        return ResponseEntity.ok(predictionService.getPrediction(lineName, way, beginStop, endStop, startTime));
     }
 }
